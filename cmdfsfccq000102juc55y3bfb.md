@@ -43,7 +43,7 @@ Different teams use different increments depending on risk tolerance. For exampl
 
 Feature flags (toggles) or user segmentation are common ways to implement canaries in code. For instance, you might enable a new feature only for certain users:
 
-```plaintext
+```php
 <?php
 // Example: PHP pseudocode for a canary feature flag
 functionisFeatureEnabled($featureName, $userId) {
@@ -52,7 +52,7 @@ return (crc32($userId) % 100) < 10; // 10% of users
 }
 ```
 
-```plaintext
+```php
 $userId= $_SESSION['user_id'];
 if(isFeatureEnabled('new_dashboard', $userId)) {
 // Canary: serve new dashboard
@@ -64,7 +64,7 @@ include 'dashboard_v1.php';
 ?>
 ```
 
-```plaintext
+```javascript
 // Example: JavaScript pseudocode for a canary flag
 constuserId = getCurrentUserId();
 functionisCanaryUser(userId) {
@@ -73,7 +73,7 @@ return(parseInt(userId, 10) % 100) < 10;
 }
 ```
 
-```plaintext
+```javascript
 if(isCanaryUser(userId)) {
 // Load new feature for canary group
 enableNewFeature();
@@ -95,11 +95,13 @@ canary (new version). The canary cluster gets only a little traffic at first. Ka
 compares metrics (errors, latency, etc.) between baseline and canary. If the metrics look fine,
 Spinnaker (Netflix’s CD platform) continues rollout; if not, it aborts the canary. This
 pipeline gives Netflix engineers confidence that changes are safe before reaching all users.
+
 Google: Google Cloud offers built-in canary strategies (e.g. in Cloud Deploy). Google
 collaborated with Netflix on Kayenta, and Google Cloud’s docs describe canaries as splitting
 traffic between old and new revisions during a rollout. In practice, Google runs phased
 rollouts on Kubernetes or Cloud Run so that only a subset of pods serve the new version initially.
 Google’s experience mirrors Netflix’s: monitor and only advance if metrics pass.
+
 Uber: Uber’s “μDeploy” system also relies on canaries. They deploy new versions worldwide in
 phases, with automated monitoring at each step. In fact, Uber reports that about 10% of their
 weekly deployments are automatically rejected and rolled back during canary checks. The
@@ -132,7 +134,7 @@ canary won’t save you. Always define what “failure” means (e.g. error rate
 the fallback so you don’t scramble.
 ```
 
-```
+```plaintext
 Deploying too broadly, too fast. Don’t start at 50% or skip phases. Launching a canary to too
 many users at once defeats the purpose. Begin with just 1–10%, verify safety, then scale up
 slowly. Rushing a rollout can expose large user groups to hidden bugs.
@@ -152,7 +154,7 @@ plans for these scenarios.
 
 ## Key Takeaways
 
-```
+```plaintext
 Canary deployments dramatically reduce risk by testing new releases on a small subset of
 traffic before full rollout.
 Always monitor key metrics and automate judgment: if the canary’s health dips, rollback
