@@ -2,7 +2,7 @@
 title: "20 Essential System Design Concepts for Scalable Architecture"
 seoTitle: "Scalable Architecture Key Design Concepts"
 seoDescription: "Discover 20 key system design concepts: scalable architecture, load balancing, microservices, and cloud-native strategies used by tech giants"
-datePublished: Wed Jul 23 2025 14:24:17 GMT+0000 (Coordinated Universal Time)
+datePublished: Wed Jul 16 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cmdg219tm000e02jshw3941cp
 slug: 20-essential-system-design-concepts-for-scalable-architecture
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/qWwpHwip31M/upload/92096bcaca4eb07ffd308bdf5d1a113a.jpeg
