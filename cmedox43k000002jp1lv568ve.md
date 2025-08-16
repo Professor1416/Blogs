@@ -5,6 +5,7 @@ seoDescription: "Learn how to build a React component library from scratch on NP
 datePublished: Sat Aug 16 2025 03:21:18 GMT+0000 (Coordinated Universal Time)
 cuid: cmedox43k000002jp1lv568ve
 slug: from-scratch-to-publishing-constructing-a-react-component-library-on-npm
+cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/xkBaqlcqeb4/upload/f992b56b2d0476aa121e483f8d14a688.jpeg
 tags: npm, reactjs, vite, faster-development
 
 ---
